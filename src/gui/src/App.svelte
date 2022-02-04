@@ -1,10 +1,16 @@
 <script lang="ts">
   import { swipe } from "svelte-gestures";
-import { uncompressJsonFetch } from "./lib/api";
+  import { uncompressJsonFetch } from "./lib/api";
   import Header from "./lib/components/Header.svelte";
   import Line from "./lib/components/Line.svelte";
   import ReloadPrompt from "./lib/components/ReloadPrompt.svelte";
-  import { currentLevel, audioSetting, line, lineReset, orderSetting } from "./lib/store";
+  import {
+    currentLevel,
+    audioSetting,
+    line,
+    lineReset,
+    orderSetting,
+  } from "./lib/store";
 
   let currentLines = null;
   let showingJapanese = true;
@@ -46,10 +52,10 @@ import { uncompressJsonFetch } from "./lib/api";
 
   $: {
     currentLines = null;
-    console.debug(`Fetching ./data/${$orderSetting}/${$currentLevel}.json`)
-    uncompressJsonFetch<any>(`./data/${$orderSetting}/${$currentLevel}.json.bin`)
-    //fetch(`./data/${$orderSetting}/${$currentLevel}.json`)
-      //.then((p) => p.json())
+    console.debug(`Fetching ./data/${$orderSetting}/${$currentLevel}.json`);
+    uncompressJsonFetch<any>(
+      `./data/${$orderSetting}/${$currentLevel}.json.bin`
+    )
       .then((a) => {
         // TODO types for the JSON
         currentLines =
@@ -93,7 +99,7 @@ import { uncompressJsonFetch } from "./lib/api";
   use:swipe={{
     timeframe: 300,
     minSwipeDistance: 60,
-    touchAction: "pan-y,pinch-zoom",
+    touchAction: "pan-y",
   }}
   on:swipe={(e) => {
     if (e.detail.direction === "left") {
@@ -123,7 +129,8 @@ import { uncompressJsonFetch } from "./lib/api";
   }}
 >
   {#if currentLines === null}
-    <div>Loading...</div>
+    <div>Loading...
+      (or stuck, if there is nothing selected in the dropdown, just select something) </div>
     <!-- TODO Loading indicator -->
   {:else}
     <div>
@@ -139,7 +146,7 @@ import { uncompressJsonFetch } from "./lib/api";
 <footer>
   <p>
     WIP, WIP everywhere.
-    <a href="https://codeberg.org/chivalrik/TrailsOfReading">Source Code</a>
+    <a href="https://github.com/fitzchivalrik/TrailsofReading">Source Code</a>
   </p>
   <small>
     Favicon and logo by KanjiVG. KanjiVG is copyright © 2009-2018 Ulrich Apel
@@ -169,8 +176,8 @@ import { uncompressJsonFetch } from "./lib/api";
 
   main {
     grid-column: 1/-1;
-    width: 97%;
-    height: 97%;
+    width: 96%;
+    height: 96%;
     min-height: 33vh;
     padding: 2%;
     display: flex;

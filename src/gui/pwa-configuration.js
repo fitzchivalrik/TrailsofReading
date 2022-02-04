@@ -11,29 +11,23 @@ const pwaConfiguration = {
   // ],
   mode: "development",
   workbox: {
-    // Workaround Firefox bug for runtimeCaching (which is gone x) )
+    // Workaround Firefox bug for runtimeCaching
     inlineWorkboxRuntime: true,
     runtimeCaching: [
-      // {
-      //   urlPattern: /^https:\/\/.*\/data\/scripts\/{0-9}{1,2}\/.*\.json\.bin$/i,
-      //   handler: 'CacheFirst',
-      //   options: {
-      //     cacheName: 'script-files',
-      //     expiration: {
-      //       maxEntries: 3291,
-      //       maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
-      //     },
-      //     cacheableResponse: {
-      //       statuses: [0, 200]
-      //     },
-      //     backgroundSync: {
-      //       name: "script-caching",
-      //       options: {
-      //         maxRetentionTime: 24 * 60
-      //       }
-      //     }
-      //   }
-      // },
+      {
+        urlPattern: /^https:\/\/.*\/data\/scripts\/[0-9]{1,2}\/.*\.json\.bin$/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'script-files',
+          expiration: {
+            maxEntries: 3291,
+            maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          },
+        }
+      },
       {
         urlPattern: /^https:\/\/.*\/data\/kklc\/[0-9]{4}\.json\.bin$/i,
         handler: 'CacheFirst',
@@ -46,16 +40,10 @@ const pwaConfiguration = {
           cacheableResponse: {
             statuses: [0, 200]
           },
-          backgroundSync: {
-            name: "kklc-caching",
-            options: {
-              maxRetentionTime: 24 * 60
-            }
-          }
         }
       },
       {
-        urlPattern: /\/data\/frequency\/[0-9]{4}\.json\.bin$/i,
+        urlPattern: /https:\/\/.*\/data\/frequency\/[0-9]{4}\.json\.bin$/i,
         handler: 'CacheFirst',
         options: {
           cacheName: 'frequency-entries',

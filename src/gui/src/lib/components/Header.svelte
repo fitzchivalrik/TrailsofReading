@@ -24,8 +24,9 @@
   }
 
   function orderChange() {
-    forceLineReset();
+    //TODO current lines to null too
     $currentLevel = currentOrdering?.[0]
+    forceLineReset();
   }
 
   function kanjiAndKeyword(id: number) {

@@ -13,7 +13,7 @@ line.subscribe((v) => {
     localStorage.setItem(LINE, v.toString())
 });
 
-export const currentLevel = writable(localStorage.getItem(CURRENT_LEVEL) ?? "0");
+export const currentLevel = writable(localStorage.getItem(CURRENT_LEVEL) ?? "0000");
 currentLevel.subscribe((v) => {
     console.debug(`Saving ${v} as ${CURRENT_LEVEL}`);
     localStorage.setItem(CURRENT_LEVEL, v)
