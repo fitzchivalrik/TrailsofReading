@@ -5068,17 +5068,17 @@ self.addEventListener('message', event => {
  */
 
 precacheAndRoute([{
-  "url": "assets/index.1575e576.js",
+  "url": "assets/index.b31fbbe2.css",
   "revision": null
 }, {
-  "url": "assets/index.e1bdcf84.css",
+  "url": "assets/index.f488c573.js",
   "revision": null
 }, {
-  "url": "assets/vendor.ad85ce72.js",
+  "url": "assets/vendor.e9266090.js",
   "revision": null
 }, {
   "url": "index.html",
-  "revision": "91961faee7fc32d150ec4bd5784903f7"
+  "revision": "2ae220f1ccca18dcb27a0ab4c4557b74"
 }, {
   "url": "./android-chrome-192x192.png",
   "revision": "80d9d47ef0c7a62ca92deb632c80f49b"
@@ -5109,7 +5109,7 @@ registerRoute(/^https:\/\/.*\/data\/kklc\/[0-9]{4}\.json\.bin$/i, new CacheFirst
     statuses: [0, 200]
   })]
 }), 'GET');
-registerRoute(/\/data\/frequency\/[0-9]{4}\.json\.bin$/i, new CacheFirst({
+registerRoute(/https:\/\/.*\/data\/frequency\/[0-9]{4}\.json\.bin$/i, new CacheFirst({
   "cacheName": "frequency-entries",
   plugins: [new ExpirationPlugin({
     maxEntries: 4583,
