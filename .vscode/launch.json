@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "Launch",
+      "type": "pwa-node",
+      "program": "${workspaceFolder}/src/main.ts",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "C:\\Users\\glost\\scoop\\shims\\deno.EXE",
+      "runtimeArgs": [
+        "run",
+        "--inspect",
+        "--unstable",
+        "--allow-net",
+        "--allow-read",
+        "--allow-write",
+        // Well, it may be would be better to rewrite it to use less memory instead of increasing the limit
+        // Meh.
+        "--v8-flags=--max-old-space-size=8192"
+      ],
+      "attachSimplePort": 9229
+    }
+  ]
+}
