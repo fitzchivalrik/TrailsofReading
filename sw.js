@@ -5068,17 +5068,17 @@ self.addEventListener('message', event => {
  */
 
 precacheAndRoute([{
-  "url": "assets/index.b31fbbe2.css",
+  "url": "assets/index.27f76ef0.js",
   "revision": null
 }, {
-  "url": "assets/index.f488c573.js",
+  "url": "assets/index.fd0893e7.css",
   "revision": null
 }, {
-  "url": "assets/vendor.e9266090.js",
+  "url": "assets/vendor.3f4f9b22.js",
   "revision": null
 }, {
   "url": "index.html",
-  "revision": "2ae220f1ccca18dcb27a0ab4c4557b74"
+  "revision": "b30d71323ff685e976582ba8c5154a00"
 }, {
   "url": "./android-chrome-192x192.png",
   "revision": "80d9d47ef0c7a62ca92deb632c80f49b"
