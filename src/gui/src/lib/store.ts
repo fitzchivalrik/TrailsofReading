@@ -6,6 +6,8 @@ const AUDIO_SETTING = "audioSetting";
 const ORDER_SETTING = "orderSetting"
 
 export const lineReset = writable(false);
+// TODO Refactor to [] instead of null
+export const currentLines = writable(null);
 
 export const line = writable(localStorage.getItem(LINE) ?? 0);
 line.subscribe((v) => {

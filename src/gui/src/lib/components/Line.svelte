@@ -3,7 +3,7 @@
   import type { Script } from "../../../../types";
   import { uncompressJsonFetch } from "../api";
   import { updateSrcAttributeToAbsoluteUrl } from "../helper";
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
   export let line: {
     gameId: number;
     fname: string;
@@ -120,31 +120,27 @@
   }}
 />
 {#if scriptLine}
-  {#if showingJapanese}
-    <!-- <div    style="width: 100%; height: 100%;"    transition:slide     > -->
-      <!-- <h4 transition:slide id="speaker-jpn" class="text speaker"> -->
-        <h4 id="speaker-jpn" class="text speaker">
+{#if showingJapanese}
+  <div in:fade={{duration: 150}}>
+      <h4 id="speaker-jpn" class="text speaker">
         {scriptLine?.jpnChrName ?? ""}
       </h4>
-      <!-- <h2 transition:slide class="text line"> -->
-        <h2 class="text line">
+      <h2 class="text line">
         {@html computedJapaneseHtml ?? "No Japanese Text"}
       </h2>
-    <!-- </div> -->
+    </div>
   {:else}
-    <!-- <div   transition:slide    > -->
-      <!-- <h4 transition:slide id="speaker-eng" class="speaker"> -->
-        <h4 id="speaker-eng" class="speaker">
+    <div in:fade={{duration: 150}}>
+      <h4 id="speaker-eng" class="speaker">
         {scriptLine?.engChrName ?? ""}
       </h4>
-      <!-- <h2 transition:slide id="english" class="line"> -->
-        <h2 id="english" class="line">
+      <h2 id="english" class="line">
         {@html scriptLine?.engHtmlText ?? "No English Text"}
       </h2>
-    <!-- </div> -->
+    </div>
   {/if}
 {:else}
-  <p>Loading...</p>
+  <p in:fade={{duration: 150}}>Loading...</p>
 {/if}
 
 <!--
