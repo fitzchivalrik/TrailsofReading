@@ -1,7 +1,7 @@
 # Trails of Reading WIP
 
 Kanji reading exercises taken from the Trails series.
-Click [here](#https://fitzchivalrik.github.io/TrailsofReading/) for the deployed PWA.
+Click [here](https://fitzchivalrik.github.io/TrailsofReading/) for the deployed PWA.
 Intended as additional reading exercises when learning Kanji with
 [KKLC](https://keystojapanese.com/how-to-study/).  
 Other ordering (Wanikani etc.) is even more untested.  
