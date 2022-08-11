@@ -4,7 +4,7 @@ Kanji reading exercises taken from the Trails series.
 Click [here](https://fitzchivalrik.github.io/TrailsofReading/) for the deployed PWA.
 Intended as additional reading exercises when learning Kanji with
 [KKLC](https://keystojapanese.com/how-to-study/).  
-Other ordering (Wanikani etc.) is even more untested.  
+Other orderings (Wanikani etc.) are even more untested.  
 
 **BEWARE**: As those lines are straight outta the games they are **_full of spoilers_**.
 Do not read if you are not up to date.  
