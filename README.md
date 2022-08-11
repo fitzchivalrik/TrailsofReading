@@ -1,15 +1,13 @@
 # Trails of Reading WIP
 
 Kanji reading exercises taken from the Trails series.
-Click [here](#TODO) for the deployed PWA.
+Click [here](#https://fitzchivalrik.github.io/TrailsofReading/) for the deployed PWA.
 Intended as additional reading exercises when learning Kanji with
 [KKLC](https://keystojapanese.com/how-to-study/).  
-Wanikani etc. ordering is TODO.  
+Other ordering (Wanikani etc.) is even more untested.  
 
 **BEWARE**: As those lines are straight outta the games they are **_full of spoilers_**.
 Do not read if you are not up to date.  
-Settings to exclude games (and a certain door) might come at a later date.
-Vote on the corresponding issue if you would like to see such a feature.
 
 A few notes:
 
@@ -29,7 +27,15 @@ A few notes:
 
 ## PWA Keyboard Shortcuts
 
-TODO
+- **SPACE**: Switch between Japanese/English
+- **Arrow Right**: Next line in level
+- **Arrow Left**: Previous line in level
+- **Arrow Up**: Previous level
+- **Arrow Down**: Next level
+- **Z**: Play Audio 1, if available
+- **X**: Play Audio 2, if available
+- **C**: Play Audio 3, if available
+- **V**: Play Audio 4, if available
 
 ## Developer Notes
 
@@ -43,12 +49,6 @@ metadata to get reading lines in order of
 
 Those JSONs are the primary input consumed by the PWA in `src/gui`,
 built with [svelte](https://svelte.dev).
-The actual textline (more precise, the script file which contains the textline)
-is fetched directly from
-[Trails in the Database](https://trailsinthedatabase.com) by each
-user of the PWA individually and then cached.
-
-TODO: Precache? The whole script files are about 340MB.
 
 ### Attribution
 
@@ -57,3 +57,5 @@ and released under the Creative Commons Attribution-Share Alike 3.0 license.
 
 `Kanji_all_frequence_sorted` data by 
 [Migaku Kanji Addon](https://github.com/migaku-official/Migaku-Kanji-Addon).
+
+Original scripts containing the lines from [Trails in the Database](https://trailsinthedatabase.com).
